@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portfolio Website</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      background-color: #34353b;
+    }
+    
+    header {
+      height: 100vh;
+      padding: 36px 100px;
+      background-image: url(C:\Users\Krishna Chaudhary\Downloads\bg.jpg);
+      background-position: right;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100vw;
+    }
+    
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 90%;
+      z-index: 99;
+    }
+    
+    header nav img {
+      height: 56px;
+      width: 56px;
+      object-fit: contain;
+      filter: invert(70%) sepia(96%) saturate(558%) hue-rotate(359deg)
+        brightness(103%) contrast(106%);
+    }
+    
+    header nav ul {
+      display: flex;
+    }
+    
+    header nav ul li {
+      list-style: none;
+      margin: 0px 20px;
+    }
+    
+    header nav ul li a {
+      color: #98999a;
+      text-decoration: none;
+      transition: all ease 0.5s;
+    }
+    
+    header nav ul li a:hover {
+      color: #fbfbfb;
+    }
+    
+    header nav ul li .active {
+      color: #fbfbfb;
+    }
+    
+    header nav .search {
+      height: 48px;
+      width: 200px;
+      background-color: #3d3e42;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 4px;
+      border-radius: 10px;
+    }
+    
+    header nav .search input {
+      border: none;
+      background-color: transparent;
+      width: 80%;
+      color: #fbfbfb;
+      outline: none;
+    }
+    
+    header nav .search input:focus {
+      border: none;
+      outline: none;
+    }
+    
+    header nav .search input::placeholder {
+      color: #98999a;
+      font-size: 16px;
+    }
+    
+    header nav .search i {
+      color: #98999a;
+    }
+    
+    .landing {
+      display: flex;
+      height: 90vh;
+      background-color: transparent;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .landing .intro {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .landing .intro h3 {
+      color: #fbfbfb;
+      font-weight: 400;
+      font-size: 32px;
+      margin-left: 10vw;
+    }
+    
+    .landing .intro h3 span {
+      color: #c77b1e;
+      font-weight: 600;
+      font-size: 3.5rem;
+    }
+    
+    .intro button {
+      height: 48px;
+      width: 144px;
+      margin-top: 2.5vh;
+      margin-left: 10vw;
+      background-color: transparent;
+      border: 2px solid #fec86a;
+      border-radius: 8px;
+      color: #fec86a;
+      font-size: 16px;
+      transition: all ease 0.5s;
+    }
+    
+    .intro button:hover {
+      background-color: #fec86a;
+      color: #34353b;
+    }
+    
+    .socials {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-top: 50vh;
+    }
+    
+    .socials .line {
+      background-color: #fec86a;
+      height: 15vh;
+      width: 2.5px;
+    }
+    
+    .socials i {
+      color: #fbfbfb;
+      font-size: 36px;
+    }
+    
+    .about {
+      height: 50vh;
+      width: 100vw;
+      padding: 100px;
+    }
+    
+    .about h1 {
+      font-size: 56px;
+      font-weight: 700;
+      color: #fbfbfb;
+      font-family: "Libre Baskerville", serif;
+    }
+    
+    .about .description {
+      display: flex;
+      align-items: start;
+    }
+    
+    .about .description .line {
+      height: 2.5px;
+      width: 400px;
+      background-color: #fec86a;
+      margin-right: 32px;
+    }
+    
+    .about .description p {
+      color: #fbfbfb;
+      font-size: 20px;
+    }
+    
+    .about .description p span {
+      color: #fec86a;
+    }
+    
+    .skills {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 100px;
+    }
+    
+    .skills h1 {
+      font-size: 56px;
+      font-weight: 700;
+      color: #fbfbfb;
+      font-family: "Libre Baskerville", serif;
+    }
+    
+    .cards {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 2.5vh;
+    }
+    
+    .skill-card {
+      height: 20vw;
+      width: 20vw;
+      background-color: #3d3e42;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5vh;
+      transition: all ease 0.5s;
+    }
+    
+    .skill-card:hover {
+      background-color: #fec86a;
+    }
+    
+    .skill-card img {
+      height: 7.5vw;
+      width: 7.5vw;
+      object-fit: contain;
+    }
+    
+    .skill-card h2 {
+      font-size: 24px;
+      font-weight: 400;
+      color: #fbfbfb;
+    }
+    
+    .portfolio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 100px;
+    }
+    
+    .portfolio h1 {
+      font-size: 56px;
+      font-weight: 700;
+      color: #fbfbfb;
+      font-family: "Libre Baskerville", serif;
+    }
+    
+    .portfolio-cards {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      margin-top: 50px;
+      gap: 2.5vh;
+    }
+    
+    .portfolio-card {
+      position: relative;
+      height: 30vw;
+      width: 30vw;
+      background-color: #3d3e42;
+      border-radius: 20px;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5vh;
+      transition: all ease 0.5s;
+    }
+    
+    .portfolio-card img {
+      position: relative;
+      height: 30vw;
+      width: 30vw;
+      object-fit: cover;
+    }
+    
+    .portfolio-card .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      gap: 2.5vh;
+      height: 30vw;
+      width: 30vw;
+      background-color: #34353ba2;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      transition: all ease 0.5s;
+    }
+    
+    .portfolio-card .overlay h3 {
+      color: #fbfbfb;
+      font-size: 24px;
+    }
+    
+    .portfolio-card .overlay p {
+      color: #fbfbfb;
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    .portfolio-card .overlay button {
+      height: 36px;
+      width: 108px;
+      background-color: #fec86a;
+      border: 1px solid #fec86a;
+      border-radius: 8px;
+      color: #34353b;
+      font-size: 12px;
+      transition: all ease 0.5s;
+      cursor: pointer;
+    }
+    
+    .portfolio-card .overlay:hover {
+      opacity: 1;
+    }
+    
+    .portfolio button {
+      margin-top: 50px;
+      height: 48px;
+      width: 144px;
+      background-color: #fec86a;
+      border: 1px solid #fec86a;
+      border-radius: 8px;
+      color: #34353b;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all ease 0.5s;
+    }
+    
+    .portfolio button:hover {
+      background-color: #cc9e4e;
+    }
+    
+    .experience {
+      display: flex;
+      flex-direction: column;
+      /* height: 100vh; */
+      width: 100vw;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .darker-div {
+      background-color: #34353a;
+      width: 100vw;
+      height: 10vh;
+    }
+    
+    .experience h1 {
+      position: absolute;
+      color: #fbfbfb;
+      font-size: 56px;
+      font-family: "Libre Baskerville", serif;
+      transform: translate(-50%, -50%);
+      top: 10%;
+      left: 15%;
+    }
+    
+    .lighter-div {
+      background-color: #3d3e42;
+      width: 100vw;
+      /* height: 90vh; */
+      padding: 10vh;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+    
+    .lighter-div .exp {
+      height: 30vh;
+      width: 50vw;
+      position: relative;
+      margin-left: 20vh;
+    }
+    
+    .exp h2 {
+      color: #fbfbfb;
+      font-size: 32px;
+      font-weight: 400;
+    }
+    
+    .exp h2::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      color: #fec86a;
+      background-color: #fec86a;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 7.5%;
+      left: -5%;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 5px #fec86a;
+    }
+    
+    .exp-desc::before {
+      content: "";
+      height: 190px;
+      width: 2.5px;
+      background-color: #fbfbfb;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 55%;
+      left: -5%;
+    }
+    .exp-desc h3 {
+      color: #fbfbfb;
+      font-size: 20px;
+      font-weight: 400;
+      margin: 10px 0;
+    }
+    
+    .exp-desc p {
+      color: #fbfbfb;
+      font-size: 16;
+      font-weight: 400;
+    }
+    
+    .contact-me {
+      width: 100vw;
+      padding: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .contact-me h1 {
+      font-size: 56px;
+      color: #fbfbfb;
+      font-family: "Libre Baskerville", serif;
+      font-weight: 700;
+    }
+    
+    .contact {
+      display: flex;
+      gap: 24px;
+    }
+    
+    .contact-card {
+      background-color: #fec86a;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      gap: 10px;
+      margin-top: 7.5vh;
+    }
+    
+    .skill-car {
+      height: 20vh;
+      width: 20vh;
+      /* background-color: #575656; */
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5vh;
+      /* transition: all ease 0.5s; */
+    }
+    .iii{
+      filter: drop-shadow(20px 20px 30px rgb(225, 158, 11));
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="dd">
+            
+            <ul>
+                <li><a href="#" class="active">About</a></li>
+                <li><a href="#portfolio-loc">Certificates</a></li>
+                <li><a href="#contact-loc">Contact</a></li>
+            </ul>
+            <!-- <div class="search">
+                <input type="text" placeholder="search">
+                <i class="ri-search-line"></i>
+            </div> -->
+           
+            
+        </nav>
+        <div class="landing">
+             <div class="intro"><!--<div class="iii"> <img src="C:\Users\Krishna Chaudhary\Downloads\IMG_20240317_000608_669-removebg-preview.png"alt="" height="400px" width="500px"></div> -->
+                <h3>I'M <Span>KRISHNA CHAUDHARY </Span><br>Web Developer  &<br>Software Engineer </h3>
+                <button>Contact Me</button>
+            </div>
+            <div class="socials">
+                <div class="line"></div>
+                <i class="ri-facebook-circle-fill"></i>
+                <i class="ri-twitter-fill"></i>
+                <i class="ri-linkedin-fill"></i>
+                <i class="ri-whatsapp-line"></i>
+            </div>
+        </div>
+    </header>
+    <section class="about">
+        <h1>About</h1>
+        <div class="description">
+            <div class="line"></div>
+            <p>Information Technology Specialist with 1 years of experience in managing and supporting IT infrastructure, implementing network solutions, and ensuring cybersecurity.
+                 Proficient in a wide range of technologies including cloud computing, system administration, and database management, optimizing system performance, and enhancing security protocols. Demonstrated ability to lead IT projects,  Committed to staying current with emerging technologies and industry best practices to provide innovative and efficient IT solutions</p>
+        </div>
+    </section>
+    <section class="skills">
+        <h1>My Skills</h1>
+        <div class="cards">
+            <div class="skill-card">
+                <img src="C:\Users\Krishna Chaudhary\Downloads\python.svg" alt="">
+                <h2>Python</h2>
+            </div>
+             <div class="skill-card">
+                <img src="C:\Users\Krishna Chaudhary\Downloads\java3.png"alt="">
+                <h2>JAVA</h2>
+            </div>
+            <div class="skill-card">
+                <img src="C:\Users\Krishna Chaudhary\Downloads\css.svg" alt="">
+                <h2>CSS</h2>
+            </div>
+            <!-- <div class="skill-card">
+                <img src="asset/django.svg" alt="">
+                <h2>Django</h2>
+            </div> -->
+            <!-- <div class="skill-card">
+                <img src="asset/flask.svg" alt="">
+                <h2>Flask</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/flutter.svg" alt="">
+                <h2>Flutter</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/git.svg" alt="">
+                <h2>GIT</h2>
+            </div> -->
+            <div class="skill-card">
+                <img src="C:\Users\Krishna Chaudhary\Downloads\html.svg" alt="">
+                <h2>HTML</h2>
+            </div>
+            <div class="skill-card">
+                <img src="C:\Users\Krishna Chaudhary\Downloads\js.svg" alt="">
+                <h2>JavaScript</h2>
+            </div>
+            <div class="skill-card">
+                <img src="C:\Users\Krishna Chaudhary\Downloads\CLOUD.jpg" alt="">
+                <h2>Cloud Computing</h2>
+            </div>
+            <!-- <div class="skill-card">
+                <img src="asset/mongodb.svg" alt="">
+                <h2>MongoDB</h2>
+            </div> -->
+            <div class="skill-card">
+                <img src="C:\Users\Krishna Chaudhary\Downloads\mysql.svg" alt="">
+                <h2>MySQL</h2>
+            </div>
+            <!-- <div class="skill-card">
+                <img src="asset/nodejs.svg" alt="">
+                <h2>NodeJS</h2>
+            </div> -->
+            <div class="skill-card">
+                <img src="C:\Users\Krishna Chaudhary\Downloads\C LANG.png" alt="">
+                <h2>C Language</h2>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio-loc">
+        <h1>Certificates</h1>
+        <div class="portfolio-cards">
+            <div class="portfolio-card">
+                <img src="C:\Users\Krishna Chaudhary\Desktop\certificate\AI.png" alt="">
+                <div class="overlay">
+                    <h3>Artificial Intelligence</h3>
+                    <p>certificate from ACCENTURE</p>
+                    
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="C:\Users\Krishna Chaudhary\Desktop\certificate\web dev.png" alt="">
+                <div class="overlay">
+                    <h3>Web Development</h3>
+                    <p>Certificate rom Internshalla</p>
+                    
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="C:\Users\Krishna Chaudhary\Desktop\certificate\digital marketing.png" alt="">
+                <div class="overlay">
+                    <h3>Digital Marketing</h3>
+                    <p>Certificate from ACCENTURE</p>
+                    
+                </div>
+            </div>
+            <div class="portfolio-card">
+                
+                <img src="C:\Users\Krishna Chaudhary\Pictures\Screenshots\Screenshot 2024-07-31 232239.png"alt="">
+                <div class="overlay">
+                    <h3>Data Analytic $ Visualization</h3>
+                    <p>Internship from ACCENTURE</p>
+                    
+                </div>
+           
+            </div>
+            <div class="portfolio-card">
+                <img src="C:\Users\Krishna Chaudhary\Desktop\certificate\ip.png" alt="">
+                <div class="overlay">
+                    <h3>IP Adress $ Microsoft</h3>
+                    <p>Certificate from IPST</p>
+                   
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="C:\Users\Krishna Chaudhary\Desktop\certificate\java.png" alt="">
+                <div class="overlay">
+                    <h3>JAVA Technology</h3>
+                    <p>Certificate from BTPS</p>
+                   
+                </div>
+            </div>
+        </div>
+        <Button>View More</Button>
+    </section>
+    <section class="experience">
+        <div class="darker-div"></div>
+        <h1>PROJECTS</h1>
+        <div class="lighter-div">
+            <div class="exp">
+                <h2>Airlines Management System Project</h2>
+                <div class="exp-desc">
+                    <BR><br>  
+                    <p>                         
+
+                        Designed and developed a comprehensive Airlines Management System as part of a capstone project for my Information Technology degree program. This system was aimed at streamlining and optimizing various operational aspects of airline management, including flight scheduling, booking, and customer service.<BR><br>
+                       
+                            <u> Technologies Used:</u>    JAVA and MySQL for the database</p>
+                </div>
+            </div>
+            <div class="exp">
+                <h2>E-Commerce Website Development Project</h2>
+                <div class="exp-desc">
+                    <br><br>
+                    <p>
+                        Project Overview: Designed and developed a fully functional e-commerce website as part of my project. The website aimed to provide a seamless online shopping experience, including product browsing, user authentication, shopping cart, and payment processing. <br><br>
+                        
+                       <u> Technologies Used:</u> Leveraged a modern tech stack including HTML, CSS, JavaScript, and Bootstrap for the frontend;and MySQL for the database.
+                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-me" id="contact-loc">
+        <h1>Contact Me</h1>
+        <div class="contact">
+            <div class="contact-card">
+                <i class="ri-message-3-line"></i>
+                <p>Web Developer</p>
+            </div>
+            <div class="contact-card">
+                <i class="ri-phone-line"></i>
+                <p>+91 7704025256</p>
+            </div>
+            <div class="contact-card">
+                <i class="ri-map-pin-3-line"></i>
+                <p>KANPUR,UTTAR PRADESH</p>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
